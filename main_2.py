@@ -103,8 +103,8 @@ def find_id(image_path):
 
         # cv2.imshow("gp", group)
         group = cv2.threshold(group, 0, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
-        cv2.imshow("gp", group)
-        cv2.waitKey()
+        # cv2.imshow("gp", group)
+        # cv2.waitKey()
         # detect the contours of each individual digit in the group
         digit_cnts = cv2.findContours(group.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         digit_cnts = imutils.grab_contours(digit_cnts)
@@ -117,7 +117,7 @@ def find_id(image_path):
 
             roi = group[y:y + h, x:x + w]
             roi = cv2.resize(roi, (42, 60))
-            black_n = cv2.resize(roi, (12, 16))
+            black_n = cv2.resize(roi, (13, 18))
 
             # black_n = cv2.bitwise_not(black_n)
 

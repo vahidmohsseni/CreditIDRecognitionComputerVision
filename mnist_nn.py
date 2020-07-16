@@ -63,7 +63,8 @@ def predict_from_src(pic):
 def predict(img):
     # plt.imshow(img)
     # plt.show()
-    img = np.pad(img, ((5, 5), (5, 5)), 'constant', constant_values=0)
+    img = np.pad(img, ((5, 5), (7, 8)), 'constant', constant_values=0)
+    # print(img.shape)
     # plt.imshow(img)
     # plt.show()
     img = img.reshape((1, 784))
